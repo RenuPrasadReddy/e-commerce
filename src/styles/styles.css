@@ -1,0 +1,22 @@
+.flex-container{
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3px;
+    /* box-sizing: border-box; */
+    /* padding: 5px */
+}
+
+.data{
+     text-align: center;
+     /* padding: 10px; 
+    margin-left: 3px;  */
+    /* width: 80% */
+    /* display: inline-block; */
+}
+
+/* .data{
+    margin-left: 25px 
+} */
+
