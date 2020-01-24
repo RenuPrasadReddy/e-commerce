@@ -1,60 +1,70 @@
 import React from 'react';
+
 import '../styles/styles.css'
+import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+
+import akshay from '../assests/images/akshay.jpg'
+import DisplayDetails from './DisplayDetails'
+
+import { addToCart, addToWishlist, addRemoveQuantity } from '../actions/actions'
 
 class DisplayItem extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     // this.state = {
-    //     //     cart: [],
-    //     //     wishList: []
-    //     // }
-    // }
 
-    handleCart(e, item){
-        // console.log("item :", item);
-
-        // this.setState({
-        //     cart:[...this.state.cart, item.name]
-        // }, () => {
-        //     console.log(this.state.cart);
-            this.props.parentCart(item.name);
-        // });
+    handleCart = (e, item) => {
+        this.props.dispatch(addToCart(item))
     }
 
-    handleWishlist(e, item){
-        // console.log("item :", item);
+    handleWishlist = (e, item) => {
 
-        // this.setState({
-        //     cart:[...this.state.cart, item.name]
-        // }, () => {
-        //     console.log(this.state.cart);
-            this.props.parentWishlist(item.name);
-        // });
+        this.props.dispatch(addToWishlist(item));
+
+    }
+
+    handleQuantity = (e, index) => {
+         this.props.dispatch(addRemoveQuantity(e.target.value, index));
+        // console.log("value:", e.target.value);
+    }
+
+    displayDetails = (item) => {
+        // <DisplayDetails item={this.props.item}
+
     }
 
     render() {
         return (
-            
+            //   <Link style = {{color: 'black', textDecoration: 'none'}} to='/details'>
             <div>
-                {/* {this.state.cart} */}
-                <div className="flex-container">
-                    <div className="data">
+                < div className="card" onClick={() => this.displayDetails(this.props.item)} >
+
+                    <div style={{ margin: "2px auto" }}>
                         {this.props.item.name}
                     </div>
-                    <div className="data">
+                    <div style={{ margin: "2px auto" }}>
                         {this.props.item.netWeight}
                     </div>
-                    <div className="data">
-                        <button onClick={(e) => this.handleCart(e, this.props.item)}>Add to Cart</button>
+                    <div>
+                        <input className="number" placeholder="Qty" min="1" max={this.props.item.quantity} type="number" onChange={(e) => this.handleQuantity(e,this.props.index)} />
                     </div>
-                    <div className="data">
-                        <button onClick={ e => this.handleWishlist(e, this.props.item)}>Add to wishlist</button>
+                    <div >
+                        <button className="button" onClick={(e) => this.handleCart(e, this.props.item)}>Add to Cart</button>
                     </div>
+                    <div >
+                        <button className="button" onClick={e => this.handleWishlist(e, this.props.item)}>Add to wishlist</button>
+                    </div>
+
                 </div>
             </div>
+
+            //   </Link>
+
 
         );
     }
 }
-
-export default DisplayItem;
+// const mapDispatchToProps = (dispatch,ownProps) => {
+//     return {
+//         addToCart: () => dispatch({ type: 'ADD_TO_CART', itemToBeAdded: ownProps.item })
+//     }
+// }
+export default withRouter(connect()(DisplayItem));

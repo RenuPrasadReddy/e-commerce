@@ -4,7 +4,7 @@
         "name": "Cheerios Gluten Free Cereal Box", 
         "netWeight": "8.9 oz", 
         "quantity": 8,
-        "imageURL": "https://drive.google.com/open?id=1yZMTy5KCv3tH2FutyYlpZwQt-q-QkJ60"
+        "imageURL": "../assets/images/akshay.jpeg"
     },
     {   
         "id": 2,
@@ -31,4 +31,5 @@
         "quantity": 4,
         "imageURL": "https://drive.google.com/open?id=1IKOtYVxzOYHWwZOajm5JLpAW9KCjf4JA"
     }
+
 ]

@@ -1,22 +1,102 @@
-.flex-container{
-    background-color: lightgray;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 3px;
-    /* box-sizing: border-box; */
-    /* padding: 5px */
+.flex-container {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  /* box-sizing: border-box; */
+  /* padding: 5px */
 }
 
-.data{
-     text-align: center;
-     /* padding: 10px; 
+.cards {
+  /* position: relative;
+  display: flex; 
+  flex-wrap: wrap;
+  align-items: stretch; */
+  text-align : center;
+}
+
+.card {
+  /* position: absolute; */
+  text-align: center;
+  /* flex: 0 0 200px; */
+  display: inline-block;
+  width: 50%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+.card img {
+  max-width: 100%;
+}
+
+.data {
+  text-align: center;
+  /* padding: 10px; 
     margin-left: 3px;  */
-    /* width: 80% */
-    /* display: inline-block; */
+  width: 80%;
+  /* display: inline-block; */
 }
 
 /* .data{
     margin-left: 25px 
 } */
 
+nav {
+  /* position: fixed; */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: lightblue;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 10%;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
+
+.button {
+  color: #fff;
+  background: rgb(8, 207, 124);
+  padding: 10px;
+  border-radius: 30px;
+  margin: 5px;
+  width: 30%;
+  border: none;
+  transition: all 0.4s ease 0s;
+  display: inline-block;
+    cursor:  pointer;
+}
+
+.button:hover, .remove_button:hover {
+  outline: 0;
+}
+.button:focus, .remove_button {
+  outline: 0;
+}
+
+.number{
+    margin: 5px;
+    width: 17%;
+    /* border-radius: 2px; */
+}
+
+.remove_button{
+    color: #fff;
+  background: lightcoral;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 5px;
+  width: 30%;
+  border: none;
+  transition: all 0.4s ease 0s;
+  display: inline-block;
+}
