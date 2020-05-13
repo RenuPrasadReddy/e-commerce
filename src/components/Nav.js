@@ -8,7 +8,7 @@ export default function Nav(props) {
         <div>
             <nav className="nav">
                 <Link style={{ color: "black", textDecoration: 'none' }} to='/'>
-                    <h3>FABRIK</h3>
+                    <h3>Home</h3>
                 </Link>
                 <ul className='nav-links'>
                     <Link style={{ color: "black", textDecoration: 'none' }} to='/cart'>
